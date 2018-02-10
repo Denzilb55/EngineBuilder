@@ -8,8 +8,14 @@ public class Map : MonoBehaviour {
   public Camera camera;
 
   private Tile[,] tiles;
-  private int width;
-  private int height;
+  public int width {
+    get;
+    private set;
+  }
+  public int height {
+    get;
+    private set;
+  }
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +29,10 @@ public class Map : MonoBehaviour {
     }
     camera.transform.position = new Vector3(width / 2.0f, height / 2.0f, -10);
 	}
+
+  public Tile GetTile(Vector3 position) {
+    return tiles[(int)position.x, (int)position.y];
+  }
 	
 	// Update is called once per frame
 	void Update () {

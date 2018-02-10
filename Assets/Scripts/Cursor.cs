@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cursor : MonoBehaviour
 {
   public Building building;
+  public Map map;
 
   // Use this for initialization
   void Start() {
@@ -15,18 +16,27 @@ public class Cursor : MonoBehaviour
   void Update() {
     if (Input.GetKeyDown(KeyCode.E)) {
       GameObject.Instantiate(building, transform.position, transform.rotation);
+      Debug.Log(map.GetTile(transform.position));
     }
     else if (Input.GetKeyDown(KeyCode.W)) {
-      transform.position += Vector3.up;
+      if (transform.position.y < map.height - 1) {
+        transform.position += Vector3.up;
+      }
     }
     else if (Input.GetKeyDown(KeyCode.S)) {
-      transform.position += Vector3.down;
+      if (transform.position.y > 0) {
+        transform.position += Vector3.down;
+      }
     }
     else if (Input.GetKeyDown(KeyCode.A)) {
-      transform.position += Vector3.left;
+      if (transform.position.x > 0) {
+        transform.position += Vector3.left;
+      }
     }
     else if (Input.GetKeyDown(KeyCode.D)) {
-      transform.position += Vector3.right;
+      if (transform.position.x < map.width - 1) {
+        transform.position += Vector3.right;
+      }
     }
   }
 }
