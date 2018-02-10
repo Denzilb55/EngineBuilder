@@ -18,7 +18,7 @@ public class Map : MonoBehaviour {
   }
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
     width = 10;
     height = 5;
     tiles = new Tile[width, height];

@@ -7,6 +7,7 @@ public class Game : MonoBehaviour {
 
 	public Player playerTemplate;	
 	public Text[] playerTexts;
+	public Color[] playerColors;
 
 	private int numPlayers;
 	private Map map;
@@ -18,13 +19,17 @@ public class Game : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		numPlayers = 1;
+		numPlayers = 2;
 		map = GetComponent<Map>();
 		players = new List<Player>();
 		for (int i = 0; i < numPlayers; i++) {
 			Player player = GameObject.Instantiate<Player>(playerTemplate);
+			player.color = playerColors[i];
 			players.Add(player);
 			player.cursor.map = map;
+			player.transform.position = i == 0 ? new Vector3(0, 0, 0) : new Vector3(map.width - 1, 0, 0);
+			player.cursor.GetComponent<SpriteRenderer>().color = player.color;
+			playerTexts[i].color = player.color;
 		}
 
 		turnTicks = 5;

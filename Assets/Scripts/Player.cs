@@ -13,6 +13,8 @@ public class Player : MonoBehaviour {
 		get {return GetComponent<Cursor>();}
 	}
 
+	public Color color;
+
 	private List<Building> buildings;
 
 	// Use this for initialization
@@ -28,9 +30,10 @@ public class Player : MonoBehaviour {
 
 	public void BuildBuilding(Building building, Map map) {
 		if (credits >= 8) {
-			buildings.Add(GameObject.Instantiate(building, transform.position, transform.rotation));
+			Building b = GameObject.Instantiate(building, transform.position, transform.rotation);
+			b.GetComponent<SpriteRenderer>().color = color;
+			buildings.Add(b);
 			credits -= 8;
-			Debug.Log(map.GetTile(transform.position));
 		}
 	}
 
