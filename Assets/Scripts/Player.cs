@@ -22,4 +22,12 @@ public class Player : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void BuildBuilding(Building building, Map map) {
+		if (credits >= 8) {
+			GameObject.Instantiate(building, transform.position, transform.rotation);
+			credits -= 8;
+			Debug.Log(map.GetTile(transform.position));
+		}
+	}
 }

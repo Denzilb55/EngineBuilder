@@ -7,16 +7,19 @@ public class Cursor : MonoBehaviour
   public Building building;
   public Map map;
 
+  public Player player {
+    get {return GetComponent<Player>();}
+  }
   // Use this for initialization
   void Start() {
+
 
   }
 
   // Update is called once per frame
   void Update() {
     if (Input.GetKeyDown(KeyCode.E)) {
-      GameObject.Instantiate(building, transform.position, transform.rotation);
-      Debug.Log(map.GetTile(transform.position));
+      player.BuildBuilding(building, map);
     }
     else if (Input.GetKeyDown(KeyCode.W)) {
       if (transform.position.y < map.height - 1) {
