@@ -235,6 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108289964}
   - component: {fileID: 2108289963}
+  - component: {fileID: 2108289965}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -253,8 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3222bea6e1bdd74eaf0459cabca4602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 1947717249448150, guid: c642278bec47ccb429b8b5bab679d647, type: 2}
-  tile2: {fileID: 1947717249448150, guid: 65765ad323f474946ba868c4078f1f95, type: 2}
+  tile: {fileID: 114972319882988388, guid: c642278bec47ccb429b8b5bab679d647, type: 2}
+  tile2: {fileID: 114306546092853810, guid: 65765ad323f474946ba868c4078f1f95, type: 2}
   camera: {fileID: 2082933292}
 --- !u!4 &2108289964
 Transform:
@@ -269,3 +270,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2108289965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108289962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b61e316bc17644392b329a4f8cb0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
