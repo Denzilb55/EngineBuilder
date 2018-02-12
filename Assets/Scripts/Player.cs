@@ -9,6 +9,13 @@ public class Player : MonoBehaviour {
 		private set;
 	}
 
+	public int ID {
+		get; 
+		private set;
+	}
+
+	private static int lastID = 0;
+
 	public Cursor cursor {
 		get {return GetComponent<Cursor>();}
 	}
@@ -16,6 +23,10 @@ public class Player : MonoBehaviour {
 	public Color color;
 
 	private List<Building> buildings;
+
+	void Awake() {
+		ID = lastID++;
+	}
 
 	// Use this for initialization
 	void Start () {
