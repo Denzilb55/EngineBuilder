@@ -27,7 +27,7 @@ public class Game : MonoBehaviour {
 			player.color = playerColors[i];
 			players.Add(player);
 			player.cursor.map = map;
-			player.transform.position = i == 0 ? new Vector3(0, 0, 0) : new Vector3(map.width - 1, 0, 0);
+			player.transform.position = i == 0 ? new Vector3(0, 0, -1) : new Vector3(map.width - 1, 0, -1);
 			player.cursor.GetComponent<SpriteRenderer>().color = player.color;
 			playerTexts[i].color = player.color;
 		}
